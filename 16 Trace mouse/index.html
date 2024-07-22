@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace Mouse by card</title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body{
+            display: flex; justify-content: center; align-items: center;  height: 100vh;
+                }
+        #rect{
+            background-color: blue; width: 100px; height: 200px;      
+           }
+    </style>
+</head>
+<body>
+
+    <div id="rect">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        window.addEventListener("mousemove", function(details){
+            // console.log(details.clientX)
+            let react = document.querySelector("#rect");
+
+            let xvalue = gsap.utils.mapRange(
+                0,
+                window.innerWidth,
+                200 + react.getBoundingClientRect().width / 2,
+                window.innerWidth - (react.getBoundingClientRect().width / 2),
+                details.clientX + "px",
+
+            );
+
+            gsap.to("#rect",{
+                left: xvalue,
+                ease: Power3
+            });
+        });
+    </script>
+</body>
+</html>

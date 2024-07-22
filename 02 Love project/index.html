@@ -1,0 +1,81 @@
+<!Doctype html>
+<head>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>
+        Calculator Of Love
+    </title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            background-color: #303030;  margin: 75px 150px 75px 150px ; 
+        }
+        .Box{
+            flex-direction: column; 
+            display: flex; justify-content: center; align-items: center;
+            background-color: rgb(145, 183, 255);   height: 70vh; border-radius: 60px;
+            top:30%; border-color: 10px solid white;
+        }
+        .Box i{
+            color:white; font-size: 1.5rem; background-color: red; border-radius: 5px; padding: 7px;
+        }
+        .Calculate{
+            color: rgb(7, 7, 7); color: white; margin: 30px; 
+             font-size: 1.8rem; padding: 20px;
+        }
+        .container-0{
+            padding: 40px;  background-color: lavender; border-radius: 20px;
+        }
+        span{
+            font-size: 1.5rem;
+        }
+        .input1{
+            background-color: black; color: white; border-radius: 10px; border: none; outline: none;
+            font-size: 1.4rem; padding: 10px; 
+        }
+        
+        .love{ 
+            background-color: black; padding: 20px; color: white; font-size: 1.2rem; margin: 30px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Box"> 
+        <h1 class="Calculate" id="result">Calculate Your Love <i class="fa-regular fa-heart"></i></h1> 
+    <div class="container-0">
+        <input class="input1" id="text1"  type="text" placeholder="Enter Your Name">
+        <span>➡</span>
+        <input class="input1" id="text2"  type="text" placeholder="Enter Your Love Name">
+    </div>
+        <button class="love" onclick="loves()">Calculate Love</button>
+    </div>
+
+
+    <script>
+        function loves() {
+        let text1 = document.getElementById('text1').value;
+        let text2 = document.getElementsByClassName('text2').value;
+        if( text1 || text2){
+            let total = Math.floor(Math.random()*100)
+            str = (text1 + text2).replace(/\s/g,"");
+            str = str.toLowerCase();
+            if(localStorage.getItem(str)){
+                total=localStorage.getItem(str);
+            }else{
+                localStorage.setItem(str,total);
+            }
+            document.getElementById('result').innerText=total
+            console.warn(str);
+        } else{
+            alert('please enter valid Name');
+        }
+    }
+        
+
+    </script>
+</body>
+</html>

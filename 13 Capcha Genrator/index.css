@@ -1,0 +1,42 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body{
+    background-color: wheat; 
+    flex-direction: column; 
+    display: flex; justify-content: center; align-items: center; height: 100vh; 
+}
+
+.container{
+    background-color: aliceblue; width:340px; height: 220px; margin: 20px; 
+    border-radius: 15px;
+}
+
+.header{
+    padding: 15px 20px; background-color:blue; font-size: 2.4rem;  
+    text-align: center;
+    border-top-left-radius:15px;  border-top-right-radius: 15px; color: white; 
+    font-weight: 900;
+}
+
+.Captcha{ 
+    text-align: center; font-weight: 700; font-size: 1.3rem; padding: 10px;
+    color: black;
+}
+
+.input{
+    text-align: center; font-size: 1.2rem;
+}
+
+input{
+    padding: 5px; width: 280px;
+}
+
+.btn-1{
+    flex-direction: row;
+    display: inline-block; justify-content: center; align-items: center;
+     margin-left: 50px; margin-top: 18px;
+    border-radius: 8px;  
+    background-color: blue; padding: 10px 20px; 
+}

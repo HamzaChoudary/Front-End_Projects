@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+.container{
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.img-container{
+    display: flex;
+}
+
+.btn{
+    color: white;
+    font-size: 25px;
+    opacity: 0.9;
+    position: absolute;
+    top: 48%;
+}
+
+.prev{
+    right: 65%;
+}
+
+.next{
+    left: 65%;
+}
